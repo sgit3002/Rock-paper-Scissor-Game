@@ -1,0 +1,130 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('img\ RPS.jpg'); /* Replace 'your-background-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; /* To prevent the blurred background from extending beyond the body */
+    height: 12000px;;
+}
+
+/* Apply a blur effect to the background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(10px); /* Adjust the blur intensity as needed */
+    z-index: -1; /* Place the blurred background behind other elements */
+}
+h1 {
+    background-color: #081b31;
+    color:white;
+    height:70px;
+    text-align: center;
+    line-height: 5rem;
+}
+
+.choices {
+    display:flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.choice:hover {
+    background-color: #081b31;
+}
+.choice {
+    height:165px;
+    width:165px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 150px;
+    width:150px;
+    object-fit:cover;
+    border-radius: 50%;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    gap:5rem;
+    font-size: 2rem;
+}
+
+#user-score {
+    font-size: 4rem;
+
+}
+#comp-score {
+    font-size: 4rem;
+}
+
+.msg-con {
+    display: flex;
+    justify-content: center;
+}
+#msg {
+    background-color: #081b31;
+    color: azure;
+    text-align: center;
+    margin-top: 5rem;
+    font-size:2rem;
+    display: inline;
+    padding:1rem;
+    border-radius: 1rem;
+}
+
+/* @media only screen and (max-width: 768px) {
+    .choices {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .choice {
+        margin-bottom: 1rem;
+    }
+
+    .score-board {
+        flex-direction: row;
+    }
+} */
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        overflow-y: auto; 
+    
+    }
+
+    .choices {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .choice {
+        margin-bottom: 1rem;
+    }
+
+    .score-board {
+        flex-direction: column; /* Adjust layout for smaller screens */
+    }
+}
